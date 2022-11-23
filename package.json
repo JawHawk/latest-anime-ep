@@ -9,5 +9,28 @@
     "puppeteer": "^19.2.2",
     "request": "^2.88.2",
     "request-promise": "^4.2.6"
-  }
+  },
+  "engines": {
+    "node": "^19.1.0"
+  },
+  "name": "proj-20-latest-anime-api",
+  "version": "1.0.0",
+  "main": "api.js",
+  "devDependencies": {},
+  "scripts": {
+    "start": "node api.js",
+    "dev":"nodemon api.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JawHawk/latest-anime-api.git"
+  },
+  "author": "jawhawk",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JawHawk/latest-anime-api/issues"
+  },
+  "homepage": "https://github.com/JawHawk/latest-anime-api#readme",
+  "description": ""
 }
