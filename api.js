@@ -10,7 +10,9 @@ let animes = {};
 
 async function scraper(){
 try {
-  const { data } = await axios.get(url);
+  const { data } = await axios.get(url,{ 
+    headers: { "Accept-Encoding": "gzip,deflate,compress" } 
+});
   const $ = cheerio.load(data);
 
   const items = $(".items li");
