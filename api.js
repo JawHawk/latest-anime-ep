@@ -37,8 +37,9 @@ setTimeout(()=>{scraper()},1000*60*5);
 
 app.get('/', function(req, res) {
     res.json(animes);
+    console.log(req.socket.remoteAddress)
   });
 
-app.listen(process.env.PORT || 80, function() {
+app.listen(process.env.PORT || 3030, function() {
     console.log("Server is running");
   });
