@@ -1,9 +1,10 @@
 const express = require('express');
+const cors = require('cors');
 const app = express();
+app.use(cors())
 
 const axios = require("axios");
 const cheerio = require("cheerio");
-const pretty = require("pretty");
 
 const url = "https://gogoanime.tel/";
 let animes = {};
@@ -24,7 +25,6 @@ try {
     anime['name'] = $(k['1']).text();
     anime['episode'] = parseInt(($(k['2']).text()).slice(8));
     anime['link'] = url + $(link).attr('href');
-    console.log(anime);
     animes[parseInt(ind)+1] = anime;
   })
   
@@ -39,9 +39,8 @@ setTimeout(()=>{scraper()},1000*60*5);
 
 app.get('/', function(req, res) {
     res.json(animes);
-    console.log(req.socket.remoteAddress)
   });
 
-app.listen(process.env.PORT || 3030, function() {
+app.listen(process.env.PORT || 3000, function() {
     console.log("Server is running");
   });
