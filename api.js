@@ -22,9 +22,9 @@ try {
     let k = $(ele).children()
     let link = $(k['1']).children().first()
     anime['name'] = $(k['1']).text();
-    anime['episode'] = ($(k['2']).text()).at(-1);
+    anime['episode'] = parseInt(($(k['2']).text()).slice(8));
     anime['link'] = url + $(link).attr('href');
-
+    console.log(anime);
     animes[parseInt(ind)+1] = anime;
   })
   
